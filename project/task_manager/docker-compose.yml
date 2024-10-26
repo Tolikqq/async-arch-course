@@ -1,0 +1,22 @@
+version: "3.9"
+
+x-postgresql-db: &postgresql-db
+  image: postgres:14.1
+  restart: always
+  logging:
+    driver: none
+  environment:
+    - POSTGRES_USER=user
+    - POSTGRES_PASSWORD=mypassword
+    - POSTGRES_DB=task-manager-db
+
+services:
+  db:
+    <<: *postgresql-db
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgresql_task_manager_volume:/var/lib/postgresql/data/
+
+volumes:
+  postgresql_task_manager_volume:

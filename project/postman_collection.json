@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "9befb67f-de1a-4993-b927-a989ef15833d",
+		"name": "auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10809470"
+	},
+	"item": [
+		{
+			"name": "users-me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiIwZmExM2EwNmYzMTk0OTAwYWI4NDg1YzE5NTQ5NmQzMyIsImV4cCI6MTcyNjgzNDYyN30.CrrjC5pVOqEzB8YGsUdoaYBDqNRIAgGFbgNFga7OXOw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/iam/users/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"iam",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "test@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/iam/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"iam",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test27@test.ru\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/iam/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"iam",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "workers-me",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiI3MGViNzJjNzk0ZTk0ZGIzOGVlMzQxZWYxM2QzYzY2ZCIsImV4cCI6MTcyNjk0OTE3NX0.Mp02OvdwIconWWk9EKH3dCbyPi41QEPYe0ncrk0ZDO0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/api/workers/me/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"workers",
+						"me",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiI3MGViNzJjNzk0ZTk0ZGIzOGVlMzQxZWYxM2QzYzY2ZCIsImV4cCI6MTcyNzExOTA2N30.VEhMewMA7-u5LnZWWKyYvXe_Hs-wtXasvobvyInV5r8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"task_id\": \"d028512d-8579-4e08-898a-730d1cf2293e\",\n  \"description\": \"test string\",\n  \"assignee_id\": \"94228fd9-2364-4c3a-b29a-16bc66272721\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8001/api/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reassign-tasks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "my-tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiI3MGViNzJjNzk0ZTk0ZGIzOGVlMzQxZWYxM2QzYzY2ZCIsImV4cCI6MTcyNzM3NDIzOX0.Rh_0-CQu8-xUpf8Mx4QgbEuaJ8DlpUS2r-k0L6cpRHs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8001/api/tasks/my-tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"tasks",
+						"my-tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start-outbox",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/api/start-outbox",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"start-outbox"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

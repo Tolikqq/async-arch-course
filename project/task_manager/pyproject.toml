@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "task_manager"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.1"
+uvloop = "^0.20.0"
+pydantic-settings = "^2.4.0"
+sqlalchemy = "^2.0.32"
+aiokafka = "^0.11.0"
+dependency-injector = "4.42.0b1"
+python-schema-registry-client = "^2.6.0"
+asyncpg = "^0.29.0"
+greenlet = "^3.1.0"
+uvicorn = "^0.30.6"
+pyjwt = "^2.9.0"
+pytz = "^2024.2"
+dataclasses-avroschema = "^0.63.1"
+aiosmtplib = "^3.0.2"
+kafka-python = "^2.0.2"
+orjson = "^3.10.7"
+ruff = "^0.6.9"
+mypy = "^1.11.2"
+types-pytz = "^2024.2.0.20241003"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+allow_redefinition = false
+namespace_packages = true
+check_untyped_defs = true
+disallow_untyped_decorators = false
+disallow_any_explicit = false
+disallow_any_generics = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+ignore_errors = false
+ignore_missing_imports = true
+implicit_reexport = false
+local_partial_types = true
+strict_optional = true
+strict_equality = true
+show_error_codes = true
+no_implicit_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unreachable = true
+warn_no_return = true
